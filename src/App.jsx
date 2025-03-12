@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import MonsterList from './Components/List/List'
+import FilterMonsters from './Components/SearchBox/SearchBox'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './index.css'
 import './App.css'
 
@@ -136,30 +138,19 @@ import './App.css'
     }, [])
 
    const searchMonsters = (e) => {
-    setFilterName(e.target.value.toLowerCase())
+     setFilterName(e.target.value.toLowerCase())
    }
 
    const filteredMonsters = monsters.filter(data => {
     return data.name.toLowerCase().includes(filtername)
    })
 
+
     return (
       <>
-          <div className='text-center py-20 outline-none'>
-            <input className='p-4 outline-none rounded-sm bg-gray-500 text-white' placeholder='Search Monsters' onChange={searchMonsters} />
-          </div> 
-
-          <div className='text-center'>
-            {filteredMonsters.map(data =>(
-                <div key={data.id}>
-                 <h1 className='text-black text-3xl'>{data.name}</h1>
-                 {/* <h1 className='text-black text-3xl'>{data.username}</h1> */}
-
-                </div>
-              )
-
-            )}
-          </div>
+         <FilterMonsters filtername={searchMonsters}/> 
+          
+         <MonsterList monsters={filteredMonsters}/>
       </>
     )
   }
