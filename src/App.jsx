@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import MonsterList from './Components/List/List'
 import FilterMonsters from './Components/SearchBox/SearchBox'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import './index.css'
 import './App.css'
 
@@ -147,15 +145,18 @@ import './App.css'
 
 
     return (
-      <>
+      < >
+        <h1 className='text-4xl pt-10'>Monsters Rolodex</h1>
+        
          <FilterMonsters 
-         className={'p-4 outline-none rounded-sm bg-gray-500 text-white' }
+         className={'p-4 outline-none rounded-sm bg-white text-gray-500' }
           trackInput={searchMonsters}
           placeholder={"Search Monsters"}
         /> 
           
          <MonsterList 
-          monsters={filteredMonsters}
+           className={'mx-auto card-container'}
+           monsters={filteredMonsters}
         />
       </>
     )
