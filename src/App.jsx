@@ -148,9 +148,15 @@ import './App.css'
 
     return (
       <>
-         <FilterMonsters filtername={searchMonsters}/> 
+         <FilterMonsters 
+         className={'p-4 outline-none rounded-sm bg-gray-500 text-white' }
+          trackInput={searchMonsters}
+          placeholder={"Search Monsters"}
+        /> 
           
-         <MonsterList monsters={filteredMonsters}/>
+         <MonsterList 
+          monsters={filteredMonsters}
+        />
       </>
     )
   }
