@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import MonsterList from './Components/List/List'
 import FilterMonsters from './Components/SearchBox/SearchBox'
 import './index.css'
-import './App.css'
 
 // function App() {
 //     const [name, setName] = useState('Eze');
@@ -146,7 +145,7 @@ import './App.css'
 
     return (
       < >
-        <h1 className='text-4xl pt-10'>Monsters Rolodex</h1>
+        <h1 className='text-7xl pt-10 text-[#0ccac4] title'>Monsters Rolodex</h1>
         
          <FilterMonsters 
          className={'p-4 outline-none rounded-sm bg-white text-gray-500' }
